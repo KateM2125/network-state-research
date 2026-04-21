@@ -1,0 +1,91 @@
+cff-version: 1.2.0
+message: "If you use this research programme, please cite the individual papers below."
+type: software
+title: "Network State Research Programme"
+authors:
+  - family-names: "Grey"
+    given-names: "Kate M"
+    orcid: "https://orcid.org/0009-0002-1423-7343"
+    affiliation: "Chartered Institute for Securities & Investment / Network School, Forest City SFZ, Malaysia"
+repository-code: "https://github.com/KateM2125/network-state-research"
+url: "https://github.com/KateM2125/network-state-research"
+license: CC-BY-NC-ND-4.0
+date-released: 2026-04-21
+
+references:
+  - type: article
+    title: "Network State Classification Framework (NSCF): Mapping Emerging Digital Societies onto Global Institutional Economic Taxonomies"
+    authors:
+      - family-names: "Grey"
+        given-names: "Kate M"
+        orcid: "https://orcid.org/0009-0002-1423-7343"
+    year: 2026
+    month: 4
+    doi: "10.5281/zenodo.19561980"
+    url: "https://zenodo.org/records/19561980"
+    version: "2.1"
+    license: CC-BY-NC-ND-4.0
+    notes: "SSRN: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6563198"
+
+  - type: article
+    title: "Network State Credit Rating Framework (NSCRF): A First-Principles Methodology for Assessing Creditworthiness of Network States"
+    authors:
+      - family-names: "Grey"
+        given-names: "Kate M"
+        orcid: "https://orcid.org/0009-0002-1423-7343"
+    year: 2026
+    month: 4
+    doi: "10.5281/zenodo.19562422"
+    url: "https://zenodo.org/records/19562422"
+    version: "1.1"
+    license: CC-BY-NC-ND-4.0
+    notes: "SSRN: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6563902"
+
+  - type: article
+    title: "Network State Economic Index (NSEI): A Composite Measurement Framework for the Economic Output of Network States, Startup Societies, and Digitally-Native Communities"
+    authors:
+      - family-names: "Grey"
+        given-names: "Kate M"
+        orcid: "https://orcid.org/0009-0002-1423-7343"
+    year: 2026
+    month: 4
+    doi: "10.5281/zenodo.19563284"
+    url: "https://zenodo.org/records/19563284"
+    version: "1.0"
+    license: CC-BY-NC-ND-4.0
+    notes: "SSRN: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6579620"
+
+  - type: article
+    title: "Network State Environmental, Social, and Governance Framework (NS-ESG): A Composite Sustainability Reporting Standard for Digitally-Native Communities Operating Across Sovereign Jurisdictions"
+    authors:
+      - family-names: "Grey"
+        given-names: "Kate M"
+        orcid: "https://orcid.org/0009-0002-1423-7343"
+    year: 2026
+    month: 4
+    doi: "10.5281/zenodo.19674199"
+    url: "https://zenodo.org/records/19674199"
+    version: "1.0"
+    license: CC-BY-NC-ND-4.0
+    notes: "SSRN: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6619379"
+
+keywords:
+  - Network States
+  - economic classification
+  - credit rating
+  - composite index
+  - ESG reporting
+  - sustainability reporting
+  - digital sovereignty
+  - proof of personhood
+  - on-chain governance
+  - Nakamoto coefficient
+  - tokenomic equity
+  - special economic zones
+  - charter cities
+  - startup societies
+  - governance
+  - monetary evolution
+  - financial risk
+  - DeFi
+  - standards proposal

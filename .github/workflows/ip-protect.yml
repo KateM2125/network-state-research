@@ -1,0 +1,96 @@
+# .github/workflows/ip-protect.yml
+# Automatic IP protection on every push
+# Generates hashes, timestamps on Bitcoin blockchain, pins to IPFS, archives to Wayback Machine
+
+name: IP Protection Stack
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'papers/**'
+      - 'research/**'
+      - 'kol-series/**'
+      - 'data/**'
+      - 'fund/**'
+
+jobs:
+  timestamp-and-protect:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install opentimestamps-client requests
+
+      - name: Generate SHA-256 manifest
+        run: |
+          echo '{"author": "Kathleen Maree Grey", "abn": "73 551 573 050", "generated": "'$(date -u +%Y-%m-%dT%H:%M:%SZ)'", "files": {}}' > /tmp/manifest_base.json
+
+          python3 << 'EOF'
+          import hashlib, json, os, glob
+
+          manifest = json.load(open('/tmp/manifest_base.json'))
+
+          patterns = ['papers/**/*', 'research/**/*', 'kol-series/**/*', 'data/**/*', 'fund/**/*']
+          files_found = []
+          for pattern in patterns:
+              files_found.extend(glob.glob(pattern, recursive=True))
+
+          for filepath in sorted(files_found):
+              if os.path.isfile(filepath):
+                  with open(filepath, 'rb') as f:
+                      h = hashlib.sha256(f.read()).hexdigest()
+                  manifest['files'][filepath] = {
+                      'sha256': h,
+                      'size': os.path.getsize(filepath),
+                      'modified': os.path.getmtime(filepath)
+                  }
+
+          with open('timestamps/copyright-manifest.json', 'w') as f:
+              json.dump(manifest, f, indent=2)
+
+          print(f"Manifest generated: {len(manifest['files'])} files hashed")
+          EOF
+
+      - name: Submit to OpenTimestamps
+        run: |
+          ots stamp timestamps/copyright-manifest.json || true
+          echo "OpenTimestamps proof submitted"
+
+      - name: Pin to IPFS via Web3.Storage
+        if: env.WEB3_STORAGE_TOKEN != ''
+        env:
+          WEB3_STORAGE_TOKEN: ${{ secrets.WEB3_STORAGE_TOKEN }}
+        run: |
+          # Upload manifest to IPFS
+          RESPONSE=$(curl -s -X POST \
+            -H "Authorization: Bearer $WEB3_STORAGE_TOKEN" \
+            -F "file=@timestamps/copyright-manifest.json" \
+            https://api.web3.storage/upload)
+          echo "IPFS CID: $RESPONSE"
+          echo "$RESPONSE" > timestamps/ipfs-cid.txt
+
+      - name: Archive to Wayback Machine
+        run: |
+          # Submit repo URL to Wayback Machine
+          curl -s "https://web.archive.org/save/https://github.com/KateM2125/network-state-research" || true
+          echo "Wayback Machine archive requested"
+
+      - name: Commit updated manifest and proofs
+        run: |
+          git config user.name "IP Protection Bot"
+          git config user.email "kathleenmareegrey@gmail.com"
+          git add timestamps/
+          git diff --staged --quiet || git commit -m "Auto: IP protection - hashes, timestamps, proofs updated"
+          git push || true

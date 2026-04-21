@@ -1,0 +1,32 @@
+{
+  "author": "Kathleen Maree Grey",
+  "abn": "73 551 573 050",
+  "timestamp": "2026-04-07T04:15:02.599321Z",
+  "purpose": "Copyright and prior art timestamp for ANZ Landing Pad grant application materials",
+  "files": {
+    "anz-landing-pad-strategic-analysis.md": {
+      "description": "Strategic Analysis v2.0",
+      "sha256": "9d084f95c90642eb5b268dd65490be53a9cf17737ac50552f185ea7741d4cc58"
+    },
+    "smartygrants-form-mapped-v1.md": {
+      "description": "SmartyGrants Form Mapped v1",
+      "sha256": "0da926297627325fec0f9b7c29815dd19bb8adf82e74bd07aff748d1b41f5c80"
+    },
+    "anz-landing-pad-evidence-pack.pdf": {
+      "description": "Supporting Evidence Pack",
+      "sha256": "640b7b0dde1a4d0eec5124e33fc29f77e73e6987679d6e402bf0bd13f815efca"
+    },
+    "ceo-endorsement-letter.pdf": {
+      "description": "CEO Endorsement Letter",
+      "sha256": "3d655e9cffb5bacf4aeb33be52d9e3117c27f54dff9a568ea263a78036f87b17"
+    },
+    "proposal-v2-landing-pad.md": {
+      "description": "Proposal v2 - Landing Pad",
+      "sha256": "7f3466be93fe3cbc32f38584bcc2ad3ef9099322cb3e316b5b4dfa3125ff36e7"
+    },
+    "proposal-v1.md": {
+      "description": "Proposal v1",
+      "sha256": "340d6077ae2071425fc2adfe3fe275c32f0083b703a44591d06a87c0ac387363"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+Indicator,Category,Source,Frequency,Last_Value,Last_Date,Previous_Value,Previous_Date,Change_Pct,URL,Notes
+Gold Price USD/oz,Precious Metals,World Gold Council,Daily,4669,2026-04-07,5602,2026-01-15,-16.6,https://www.gold.org/goldhub/data/gold-prices,ATH $5602 Jan 2026
+Central Bank Gold Purchases (tonnes annual),Precious Metals,World Gold Council,Quarterly,1082,2024-12-31,1037,2023-12-31,4.3,https://www.gold.org/goldhub/data/gold-demand-trends,Third consecutive year >1000t
+USD Share of Global Reserves %,De-dollarization,IMF COFER,Quarterly,56.9,2025-Q3,58.4,2024-Q3,-2.6,https://data.imf.org/regular.aspx?key=41175,Down from 72% in 2001
+Bitcoin Price USD,Crypto,CoinGecko,Daily,69000,2026-04-07,126210,2025-10-15,-45.3,https://www.coingecko.com/en/coins/bitcoin,ATH $126210 Oct 2025
+Total Crypto Market Cap USD,Crypto,CoinGecko,Daily,2400000000000,2026-04-07,3800000000000,2025-12-01,-36.8,https://www.coingecko.com/en/global-charts,
+Bitcoin ETF Net Inflows USD,Crypto,Farside Investors,Weekly,65000000000,2026-03-31,,2024-01-10,,https://farside.co.uk/bitcoin-etf-flow-data,Cumulative since Jan 2024
+Stablecoin Market Cap USD,Crypto,DeFi Llama,Daily,283700000000,2026-04-07,,,,,USDT + USDC dominant
+DeFi TVL USD,Crypto,DeFi Llama,Daily,135000000000,2026-04-07,,,,https://defillama.com/,
+US National Debt USD,Macro,FRED,Daily,38300000000000,2026-04-07,,,,,124% of GDP
+US M2 Money Supply USD,Macro,FRED,Monthly,,,,,,,29% of all USD created since Jan 2020
+Network States Tracked,Network States,thenetworkstate.com,Monthly,117,2026-04-07,,,,https://thenetworkstate.com/dashboard,Balaji's dashboard
+Network School Population,Network States,ns.com,Monthly,400,2026-04-07,,,,https://ns.com,30+ AU; 12 KR
+Network School Est GCP USD,Network States,Estimate,Quarterly,36000000,2026-04-07,,,,,$90K per capita
+Praxis Capital Raised USD,Network States,Public,Event-based,544000000,2026-04-07,,,,,
+Korea AI Market USD,Korea,MSIT,Annual,5500000000,2024-12-31,,,,,Projected $53B by 2032
+AU-MY Bilateral Trade AUD,Trade,DFAT,Annual,27000000000,2024-06-30,,,,https://www.dfat.gov.au/trade/resources/trade-statistics,
+AU-ASEAN Trade AUD,Trade,DFAT,Annual,137000000000,2024-06-30,,,,https://www.dfat.gov.au/trade/resources/trade-statistics,ASEAN = AU's 2nd largest partner
+Forest City SFZ Committed Investment MYR,JS-SEZ,MIDA,Quarterly,16700000000,2025-12-31,,,,,32 companies interested

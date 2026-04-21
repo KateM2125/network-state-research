@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+Icon?
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Secrets — never commit
+.env
+*.secret
+secrets.yaml
+credentials.json
+*.pem
+*.key
+
+# Build artefacts
+*.egg-info/
+dist/
+build/
+
+# Logs
+*.log
+logs/
+
+# Walnut internal state (session-level metadata, not for public repo)
+_core/
+
+# Empty placeholder dirs
+fund/
+kol-series/
+

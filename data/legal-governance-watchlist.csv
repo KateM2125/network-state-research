@@ -1,0 +1,21 @@
+Jurisdiction,Category,Development,Status,Effective_Date,Impact_on_Network_States,Source_URL,Last_Checked
+Australia,Digital Assets,"Corporations Amendment (Digital Assets Framework) Bill 2025",Passed,2026-04-01,"Creates DAP and TCP licensing categories — regulates platforms NS members use",https://www.legislation.gov.au,2026-04-07
+Australia,AI Governance,"National AI Plan 2025 + AI Safety Institute ($29.9M)",Active,2026-01-01,"Voluntary AI governance framework — NS AI projects may face future regulation",,2026-04-07
+Australia,AML/CTF,"AML/CTF Amendment Act 2024 + AUSTRAC Rules 2025",Active,"2026-03-31 / 2026-07-01","Crypto-to-crypto, custody, FATF Travel Rule — affects NS treasury movements",,2026-04-07
+Australia,Privacy/AI,"Privacy Amendment — Automated Decision-Making",Pending,2026-12-01,"Transparency obligations for AI decisions affecting individuals",,2026-04-07
+EU,Digital Assets,"MiCA (Markets in Crypto-Assets Regulation)",Active,2024-12-30,"Comprehensive crypto regulation — benchmark for NS operating in EU",,2026-04-07
+USA,Stablecoins,"GENIUS Act (stablecoin framework)",Signed,2025-07-01,"Regulates stablecoins used as NS treasury/payment infrastructure",,2026-04-07
+USA,Digital Assets,"CLARITY Act (commodity vs security classification)",Passed House,,"Classification of tokens — affects NS token models",,2026-04-07
+Singapore,Crypto,"MAS licensing + S$250K minimum capital",Active,,"Tightening — affects NS members operating from Singapore",,2026-04-07
+Hong Kong,Stablecoins,"Stablecoin licensing regime",Active,2025-08-01,"Licensing for stablecoin issuers — relevant for NS in HK/Asia",,2026-04-07
+Korea,Virtual Assets,"Virtual Asset User Protection Act + Phase 2",Active,,"Phase 1 live, Phase 2 in development — affects Korean NS participants",,2026-04-07
+Malaysia,SFZ,"Forest City Special Financial Zone incentives",Active,2024-09-01,"0-5% tax for fintech/AI — directly enables NS economic activity in SFZ",,2026-04-07
+Malaysia,JS-SEZ,"Johor-Singapore SEZ master plan",Pending,,"9 zones, 11 sectors — governance framework for the corridor where NS operates",,2026-04-07
+Honduras,ZEDE,"ZEDE framework (Prospera/Infinita)",Under review,,"Host country legal framework for charter city model — precedent for NS",,2026-04-07
+Wyoming USA,DAO,"Wyoming DAO LLC legislation",Active,2021,"Legal personhood for DAOs — used by CityDAO and others",,2026-04-07
+Marshall Islands,DAO,"DAO Act 2022",Active,2022,"Legal wrapper for DAOs — alternative to Wyoming",,2026-04-07
+Switzerland,Blockchain,"DLT Act (Distributed Ledger Technology)",Active,2021,"Legal framework for tokenized assets and DLT trading — NS-friendly jurisdiction",,2026-04-07
+UAE/Dubai,Virtual Assets,"VARA (Virtual Assets Regulatory Authority)",Active,2023,"Comprehensive virtual asset regulation — Dubai as NS-friendly hub",,2026-04-07
+El Salvador,Bitcoin,"Bitcoin as legal tender",Active,2021,"Precedent for crypto-native monetary policy in a nation-state",,2026-04-07
+Global,AI Standards,"ISO/IEC JTC 1/SC 42 — AI standards",Ongoing,,"International AI standards affecting NS governance models",,2026-04-07
+Global,FATF,"Travel Rule for virtual assets",Ongoing,,"Cross-border crypto transfer rules — affects NS treasury movements",,2026-04-07
