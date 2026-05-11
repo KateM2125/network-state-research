@@ -86,7 +86,7 @@ jobs:
           PINATA_JWT=$(echo "$PINATA_JWT_RAW" | grep -oE 'eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+' | head -1)
           RAW_LEN=${#PINATA_JWT_RAW}
           JWT_LEN=${#PINATA_JWT}
-          PREFIX=$(echo -n "$PINATA_JWT" | head -c 4)
+          PREFIX=$(echo -n "$PINATA_JWT" | head -c 3)
           echo "Secret raw length: $RAW_LEN, extracted JWT length: $JWT_LEN, prefix: ${PREFIX}..."
           if [ -z "$PINATA_JWT" ] || [ "$PREFIX" != "eyJ" ]; then
             echo "::error::Could not extract a JWT (eyJ.x.y format) from the PINATAKETYS secret. Verify the JWT value is present in the secret blob."
