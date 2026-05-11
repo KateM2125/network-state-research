@@ -73,20 +73,46 @@ jobs:
         env:
           # Secret name is PINATAKETYS (intentional — matches the secret as registered in this repo).
           PINATA_JWT: ${{ secrets.PINATAKETYS }}
+        shell: bash
+        continue-on-error: true
         run: |
+          set +e
           if [ -z "$PINATA_JWT" ]; then
-            echo "::warning::PINATAKETYS secret not set — skipping IPFS pin. Add the secret at https://github.com/KateM2125/network-state-research/settings/secrets/actions to enable."
+            echo "::warning::PINATAKETYS secret not set — skipping IPFS pin."
             exit 0
           fi
-          RESPONSE=$(curl -s -X POST \
+          JWT_LEN=${#PINATA_JWT}
+          echo "JWT length: $JWT_LEN chars"
+
+          # Auth-only probe first (no file) to isolate auth failures from upload issues
+          AUTH_HTTP=$(curl -s -o /tmp/auth_resp.json -w '%{http_code}' \
+            -H "Authorization: Bearer $PINATA_JWT" \
+            https://api.pinata.cloud/data/testAuthentication)
+          echo "Auth probe HTTP: $AUTH_HTTP"
+          echo "Auth probe body: $(cat /tmp/auth_resp.json)"
+          if [ "$AUTH_HTTP" != "200" ]; then
+            echo "::error::Pinata auth failed (HTTP $AUTH_HTTP). The PINATAKETYS secret may be wrong, expired, or the wrong field (use the long JWT starting with eyJ, not the API Key)."
+            exit 1
+          fi
+
+          # Upload
+          UPLOAD_HTTP=$(curl -s -o /tmp/upload_resp.json -w '%{http_code}' \
+            -X POST \
             -H "Authorization: Bearer $PINATA_JWT" \
             -F "file=@timestamps/copyright-manifest.json" \
             -F 'pinataMetadata={"name":"copyright-manifest.json","keyvalues":{"repo":"network-state-research","source":"ip-protect.yml"}}' \
             -F 'pinataOptions={"cidVersion":1}' \
             https://api.pinata.cloud/pinning/pinFileToIPFS)
-          CID=$(echo "$RESPONSE" | python3 -c "import sys, json; print(json.load(sys.stdin).get('IpfsHash', ''))")
+          echo "Upload HTTP: $UPLOAD_HTTP"
+          echo "Upload body: $(cat /tmp/upload_resp.json)"
+          if [ "$UPLOAD_HTTP" != "200" ]; then
+            echo "::error::Pinata upload failed (HTTP $UPLOAD_HTTP)"
+            exit 1
+          fi
+
+          CID=$(python3 -c "import sys, json; print(json.load(open('/tmp/upload_resp.json')).get('IpfsHash', ''))")
           if [ -z "$CID" ]; then
-            echo "::error::Pinata upload failed. Response: $RESPONSE"
+            echo "::error::Upload returned 200 but no IpfsHash in response"
             exit 1
           fi
           echo "Pinned to IPFS — CID: $CID"
