@@ -68,18 +68,28 @@ jobs:
           ots stamp timestamps/copyright-manifest.json || true
           echo "OpenTimestamps proof submitted"
 
-      - name: Pin to IPFS via Web3.Storage
-        if: env.WEB3_STORAGE_TOKEN != ''
+      - name: Pin to IPFS via Pinata
         env:
-          WEB3_STORAGE_TOKEN: ${{ secrets.WEB3_STORAGE_TOKEN }}
+          PINATA_JWT: ${{ secrets.PINATA_JWT }}
         run: |
-          # Upload manifest to IPFS
+          if [ -z "$PINATA_JWT" ]; then
+            echo "::warning::PINATA_JWT secret not set — skipping IPFS pin. Add the secret at https://github.com/KateM2125/network-state-research/settings/secrets/actions to enable."
+            exit 0
+          fi
           RESPONSE=$(curl -s -X POST \
-            -H "Authorization: Bearer $WEB3_STORAGE_TOKEN" \
+            -H "Authorization: Bearer $PINATA_JWT" \
             -F "file=@timestamps/copyright-manifest.json" \
-            https://api.web3.storage/upload)
-          echo "IPFS CID: $RESPONSE"
-          echo "$RESPONSE" > timestamps/ipfs-cid.txt
+            -F 'pinataMetadata={"name":"copyright-manifest.json","keyvalues":{"repo":"network-state-research","source":"ip-protect.yml"}}' \
+            -F 'pinataOptions={"cidVersion":1}' \
+            https://api.pinata.cloud/pinning/pinFileToIPFS)
+          CID=$(echo "$RESPONSE" | python3 -c "import sys, json; print(json.load(sys.stdin).get('IpfsHash', ''))")
+          if [ -z "$CID" ]; then
+            echo "::error::Pinata upload failed. Response: $RESPONSE"
+            exit 1
+          fi
+          echo "Pinned to IPFS — CID: $CID"
+          echo "$CID" > timestamps/ipfs-cid.txt
+          echo "https://gateway.pinata.cloud/ipfs/$CID" > timestamps/ipfs-gateway-url.txt
 
       - name: Archive to Wayback Machine
         run: |
