@@ -81,14 +81,16 @@ jobs:
             echo "::warning::PINATAKETYS secret not set — skipping IPFS pin."
             exit 0
           fi
-          # Strip whitespace, newlines, CR — paste-from-screenshot-OCR hazards
-          PINATA_JWT=$(echo -n "$PINATA_JWT_RAW" | tr -d '[:space:]\r\n')
+          # The PINATAKETYS secret holds the full Pinata credential set
+          # (API Key + API Secret + JWT) — extract just the JWT for Bearer auth.
+          PINATA_JWT=$(echo "$PINATA_JWT_RAW" | grep -oE 'eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+' | head -1)
           RAW_LEN=${#PINATA_JWT_RAW}
-          CLEAN_LEN=${#PINATA_JWT}
+          JWT_LEN=${#PINATA_JWT}
           PREFIX=$(echo -n "$PINATA_JWT" | head -c 4)
-          echo "JWT raw length: $RAW_LEN, cleaned: $CLEAN_LEN, prefix: ${PREFIX}..."
-          if [ "$PREFIX" != "eyJ" ]; then
-            echo "::warning::JWT prefix is '$PREFIX' but should be 'eyJ'. This is likely the API Key or API Secret, not the JWT."
+          echo "Secret raw length: $RAW_LEN, extracted JWT length: $JWT_LEN, prefix: ${PREFIX}..."
+          if [ -z "$PINATA_JWT" ] || [ "$PREFIX" != "eyJ" ]; then
+            echo "::error::Could not extract a JWT (eyJ.x.y format) from the PINATAKETYS secret. Verify the JWT value is present in the secret blob."
+            exit 1
           fi
 
           # Base connectivity probe (no auth)
