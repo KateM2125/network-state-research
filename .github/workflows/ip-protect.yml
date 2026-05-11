@@ -13,6 +13,7 @@ on:
       - 'kol-series/**'
       - 'data/**'
       - 'fund/**'
+  workflow_dispatch:
 
 jobs:
   timestamp-and-protect:
@@ -70,10 +71,11 @@ jobs:
 
       - name: Pin to IPFS via Pinata
         env:
-          PINATA_JWT: ${{ secrets.PINATA_JWT }}
+          # Secret name is PINATAKETYS (intentional — matches the secret as registered in this repo).
+          PINATA_JWT: ${{ secrets.PINATAKETYS }}
         run: |
           if [ -z "$PINATA_JWT" ]; then
-            echo "::warning::PINATA_JWT secret not set — skipping IPFS pin. Add the secret at https://github.com/KateM2125/network-state-research/settings/secrets/actions to enable."
+            echo "::warning::PINATAKETYS secret not set — skipping IPFS pin. Add the secret at https://github.com/KateM2125/network-state-research/settings/secrets/actions to enable."
             exit 0
           fi
           RESPONSE=$(curl -s -X POST \
