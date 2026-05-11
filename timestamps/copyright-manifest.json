@@ -1,32 +1,97 @@
 {
   "author": "Kathleen Maree Grey",
   "abn": "73 551 573 050",
-  "timestamp": "2026-04-07T04:15:02.599321Z",
-  "purpose": "Copyright and prior art timestamp for ANZ Landing Pad grant application materials",
+  "generated": "2026-05-11T05:11:37Z",
   "files": {
-    "anz-landing-pad-strategic-analysis.md": {
-      "description": "Strategic Analysis v2.0",
-      "sha256": "9d084f95c90642eb5b268dd65490be53a9cf17737ac50552f185ea7741d4cc58"
+    "data/economic-indicators.csv": {
+      "sha256": "7fa94fb68259b858859c3c7be062b703c4040411dce38b7266b23f142dc2b7f3",
+      "size": 2372,
+      "modified": 1778476294.5747795
     },
-    "smartygrants-form-mapped-v1.md": {
-      "description": "SmartyGrants Form Mapped v1",
-      "sha256": "0da926297627325fec0f9b7c29815dd19bb8adf82e74bd07aff748d1b41f5c80"
+    "data/legal-governance-watchlist.csv": {
+      "sha256": "29e9f1a01fe0f526918155c202060d90c09d1b8cf2ceada6104ddd6dbba514be",
+      "size": 3260,
+      "modified": 1778476294.5752745
     },
-    "anz-landing-pad-evidence-pack.pdf": {
-      "description": "Supporting Evidence Pack",
-      "sha256": "640b7b0dde1a4d0eec5124e33fc29f77e73e6987679d6e402bf0bd13f815efca"
+    "data/network-state-watchlist.csv": {
+      "sha256": "a92f6f9a690dd39871bc60cb0d228eba5c21cd65de7dcc97295df45e7ba32b2d",
+      "size": 11275,
+      "modified": 1778476294.5752745
     },
-    "ceo-endorsement-letter.pdf": {
-      "description": "CEO Endorsement Letter",
-      "sha256": "3d655e9cffb5bacf4aeb33be52d9e3117c27f54dff9a568ea263a78036f87b17"
+    "papers/network-state-credit-rating-nscrf.md": {
+      "sha256": "86704c724be6e8a9d19ebe0919fd8baaa2cec14c2dec9e865041682d8a234183",
+      "size": 103893,
+      "modified": 1778476294.5754619
     },
-    "proposal-v2-landing-pad.md": {
-      "description": "Proposal v2 - Landing Pad",
-      "sha256": "7f3466be93fe3cbc32f38584bcc2ad3ef9099322cb3e316b5b4dfa3125ff36e7"
+    "papers/network-state-economics-nsei.md": {
+      "sha256": "dbaf37ab2e60e830c37b4d8a12b5aae7a96de1883114730af4f925b9ee934301",
+      "size": 46114,
+      "modified": 1778476294.5754619
     },
-    "proposal-v1.md": {
-      "description": "Proposal v1",
-      "sha256": "340d6077ae2071425fc2adfe3fe275c32f0083b703a44591d06a87c0ac387363"
+    "papers/network-state-taxonomy-nscf.md": {
+      "sha256": "e56427cd4ee06fd21a9cacfb473cedfd4a6874455cb26bd8949329c93b05e852",
+      "size": 69594,
+      "modified": 1778476294.5764618
+    },
+    "papers/network-states-australia-federation-deck.md": {
+      "sha256": "a723a05e08e430caaa5629f4f95c2703982ec859bab94e08ef534ce4ca331fe6",
+      "size": 9198,
+      "modified": 1778476294.5764618
+    },
+    "papers/network-states-australia-federation.md": {
+      "sha256": "95c5933ca6e1241162400cc18524c9178444b82b3c4231cb6fdd0934c8a0b7e5",
+      "size": 13377,
+      "modified": 1778476294.5764618
+    },
+    "papers/ns-esg-v1.0.md": {
+      "sha256": "ab56dc01000b3de59e21a7cda6f0442e228c184cbeab5f2fcf7d04a5b1d19c88",
+      "size": 93748,
+      "modified": 1778476294.5764618
+    },
+    "papers/nscf-v2.1.md": {
+      "sha256": "e842b02339a708b5a9b784b2d0287f70da4b08224bb333e2f01be500299a3444",
+      "size": 130448,
+      "modified": 1778476294.577462
+    },
+    "papers/nscrf-v1.1.md": {
+      "sha256": "021bf2dd106a8727f39e3d6b21541ba19c1a57238fe6f683b7eb567cfc0aa07e",
+      "size": 65193,
+      "modified": 1778476294.577462
+    },
+    "papers/nsei-v1.0.md": {
+      "sha256": "1757af09881b2a1ddfe5fd3a2e5a8ae1c3f0ea6d88637591fff90a34668df03d",
+      "size": 82170,
+      "modified": 1778476294.578462
+    },
+    "papers/sez-to-network-states.md": {
+      "sha256": "64ceeb2faa793f71efdea8e32ec65839a862f590e2fa243d612dddc9bb41ac4b",
+      "size": 41655,
+      "modified": 1778476294.578462
+    },
+    "research/research-australia-korea-ai-connections.md": {
+      "sha256": "5665425cc403d63aa9d476ca9e3338d851883ec0239997e2e65e0d2ac6674b4c",
+      "size": 26124,
+      "modified": 1778476294.578462
+    },
+    "research/research-diplomatic-recognition.md": {
+      "sha256": "00763dff1775c04a26b7f3af571cefb6003957df593b084c28f2da9be7360276",
+      "size": 10118,
+      "modified": 1778476294.5792625
+    },
+    "research/research-fiat-to-crypto-flows.md": {
+      "sha256": "1397f1c05a3e3531a8e58bde2bdbe93eeaeaf80221c199a4cb6eabd30132fdf1",
+      "size": 32660,
+      "modified": 1778476294.5794618
+    },
+    "research/research-fiat-to-precious-metals-brief.md": {
+      "sha256": "1d03d330eadd57f1ff0ee758e46b6adbb379fb05ebb6fe954cc4f3b50fa8b74e",
+      "size": 33490,
+      "modified": 1778476294.5794618
+    },
+    "research/research-recognition-application-pathway.md": {
+      "sha256": "c4eb824e3b3a1347f5a3794e896e5feb0fbd7c6b3e49ef287e404c088302aa24",
+      "size": 9204,
+      "modified": 1778476294.5794618
     }
   }
 }
