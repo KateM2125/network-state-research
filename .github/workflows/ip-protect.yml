@@ -146,7 +146,7 @@ jobs:
       - name: Archive to Wayback Machine
         run: |
           # Submit repo URL to Wayback Machine
-          curl -s "https://web.archive.org/save/https://github.com/KateM2125/network-state-research" || true
+          curl -s "https://web.archive.org/save/https://github.com/KateMareeG/network-state-research" || true
           echo "Wayback Machine archive requested"
 
       - name: Commit updated manifest and proofs
