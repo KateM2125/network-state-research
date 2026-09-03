@@ -1,7 +1,7 @@
 # Network State Research
 
 ### By Kate M Grey
-*Chartered Institute for Securities & Investment (CISI) · Network School, Forest City SFZ, Iskandar Malaysia*
+*Independent Researcher, Singapore · Member, Chartered Institute for Securities & Investment · Fellow, Financial Services Institute of Australasia*
 *ORCID: [0009-0002-1423-7343](https://orcid.org/0009-0002-1423-7343)*
 
 ---
